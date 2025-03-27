@@ -11,7 +11,7 @@ from database import engine, get_db
 models.Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI app
-app = FastAPI(title="CMS API", description="Simple CMS API with FastAPI and SQLAlchemy")
+app = FastAPI(title="CMS API", description="API Simples com FastAPI e SQLAlchemy")
 
 # Configure CORS - permitir todas as origens para resolver problemas de preflight OPTIONS
 app.add_middleware(
@@ -25,7 +25,7 @@ app.add_middleware(
 # Root endpoint
 @app.get("/")
 def root():
-    return {"message": "Welcome to the CMS API"}
+    return {"message": "Bem-vindo ao Sistema de Gerenciamento de Conteúdo (CMS)"}
 
 # Create post endpoint
 @app.post("/posts", status_code=status.HTTP_201_CREATED, response_model=schemas.Post)
@@ -36,19 +36,19 @@ def create_post(post: schemas.PostCreate, db: Session = Depends(get_db)):
     db.refresh(new_post)
     return new_post
 
-# Get all posts endpoint
+# Get todos os posts endpoint
 @app.get("/posts", response_model=List[schemas.Post])
 def get_posts(db: Session = Depends(get_db)):
     posts = db.query(models.Post).all()
     return posts
 
-# Get post by ID endpoint
+# Get post por ID endpoint
 @app.get("/posts/{post_id}", response_model=schemas.Post)
 def get_post(post_id: int, db: Session = Depends(get_db)):
     post = db.query(models.Post).filter(models.Post.id == post_id).first()
     if not post:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Post with id: {post_id} was not found")
+                            detail=f"Post com id: {post_id} não encontrado")
     return post
 
 # Update post endpoint
@@ -59,9 +59,9 @@ def update_post(post_id: int, updated_post: schemas.PostUpdate, db: Session = De
     
     if post is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Post with id: {post_id} was not found")
+                            detail=f"Post com id: {post_id} não encontrado")
     
-    # Only update fields that are provided
+    # Only update campos que foram fornecidos
     update_data = {k: v for k, v in updated_post.dict().items() if v is not None}
     post_query.update(update_data, synchronize_session=False)
     
@@ -76,7 +76,7 @@ def delete_post(post_id: int, db: Session = Depends(get_db)):
     
     if post.first() is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f"Post with id: {post_id} was not found")
+                            detail=f"Post com id: {post_id} não encontrado")
     
     post.delete(synchronize_session=False)
     db.commit()

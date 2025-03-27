@@ -43,7 +43,7 @@
     <v-footer
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }} - Simple CMS</span>
+      <span>&copy; {{ new Date().getFullYear() }} - CMS Simples</span>
     </v-footer>
   </v-app>
 </template>
@@ -66,7 +66,7 @@ export default {
         },
         {
           icon: 'mdi-plus-circle',
-          title: 'New Post',
+          title: 'Novo Post',
           to: '/posts/new'
         }
       ]
