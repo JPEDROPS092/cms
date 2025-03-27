@@ -4,14 +4,25 @@ Um sistema simples de CMS com backend em FastAPI e frontend em Nuxt.js com Mater
 
 ## Estrutura do Projeto
 
-**Backend**: API RESTful desenvolvida com FastAPI e SQLAlchemy
+### 🧰 Tecnologias
 
-**Frontend**: Interface de usuário desenvolvida com Nuxt.js e Vuetify (Material UI)
+#### Backend
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-100000?style=flat&logo=sqlalchemy&logoColor=white)
+
+#### Frontend
+
+![Nuxt.js](https://img.shields.io/badge/Nuxt.js-00C58E?style=flat&logo=nuxt.js)
+![Vuetify](https://img.shields.io/badge/Vuetify-1867C0?style=flat&logo=vuetify)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 ## Requisitos
 
-- Docker
-- Docker Compose
+- ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=flat&logo=docker&logoColor=white)
+- ![Docker Compose](https://img.shields.io/badge/Docker_Compose-2CA5E0?style=flat&logo=docker&logoColor=white)
+
 
 ## Executando com Docker
 
@@ -55,7 +66,7 @@ npm install
 npm run dev
 ```
 
-## Funcionalidades
+## ✨ Funcionalidades
 
 - Criar, listar, visualizar, editar e excluir posts![1743102948462](image/README/1743102948462.png)
 - Interface de usuário moderna e responsiva com Material Design![1743102963105](image/README/1743102963105.png)
@@ -64,19 +75,8 @@ npm run dev
 
   ![1743103171151](image/README/1743103171151.png)
 - API RESTful documentada com Swagger
-- Persistência de dados com SQLite
+- ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white) Persistência de dados
 
-## Tecnologias Utilizadas
+## 📄 Licença
 
-### Backend
-
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- SQLite
-
-### Frontend
-
-- Nuxt.js
-- Vuetify (Material UI)
-- Axios
+MIT License - Consulte o arquivo [LICENSE](LICENSE) para detalhes

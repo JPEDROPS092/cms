@@ -113,16 +113,22 @@ export default {
       
       this.loading = true
       try {
-        await this.$axios.$put(`/posts/${this.$route.params.id}`, {
-          title: this.post.title,
-          content: this.post.content,
-          published: this.post.published
-        })
+        // Garantir que apenas os campos modificados sejam enviados
+        const updateData = {}
+        if (this.post.title !== undefined) updateData.title = this.post.title
+        if (this.post.content !== undefined) updateData.content = this.post.content
+        if (this.post.published !== undefined) updateData.published = this.post.published
+        
+        console.log('Enviando dados para atualização:', updateData)
+        
+        const response = await this.$axios.$put(`/posts/${this.$route.params.id}`, updateData)
+        console.log('Resposta da atualização:', response)
+        
         this.showSnackbar('Post atualizado com sucesso', 'success')
         this.$router.push(`/posts/${this.$route.params.id}`)
       } catch (error) {
         console.error('Erro ao atualizar post:', error)
-        this.showSnackbar('Erro ao atualizar post', 'error')
+        this.showSnackbar(`Erro ao atualizar post: ${error.message || 'Erro desconhecido'}`, 'error')
       } finally {
         this.loading = false
       }
