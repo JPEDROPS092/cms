@@ -1,0 +1,39 @@
+[
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "/home/jpcode092/projects/cms/frontend/pages/posts/index.vue",
+    "chunkName": "pages/posts/index",
+    "_name": "_4fe68fde"
+  },
+  {
+    "name": "posts-new",
+    "path": "/posts/new",
+    "component": "/home/jpcode092/projects/cms/frontend/pages/posts/new.vue",
+    "chunkName": "pages/posts/new",
+    "_name": "_f6dd40c2"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/jpcode092/projects/cms/frontend/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_d43fece6"
+  },
+  {
+    "name": "posts-id",
+    "path": "/posts/:id",
+    "component": "/home/jpcode092/projects/cms/frontend/pages/posts/_id.vue",
+    "chunkName": "pages/posts/_id",
+    "children": [
+      {
+        "name": "posts-id-edit",
+        "path": "edit",
+        "component": "/home/jpcode092/projects/cms/frontend/pages/posts/_id/edit.vue",
+        "chunkName": "pages/posts/_id/edit",
+        "_name": "_5e62fd60"
+      }
+    ],
+    "_name": "_70db8ab9"
+  }
+]

@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - DATABASE_URL=sqlite:///./cms.db
+    networks:
+      - cms-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+      - API_URL=http://backend:8000
+    networks:
+      - cms-network
+
+networks:
+  cms-network:
+    driver: bridge
