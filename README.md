@@ -39,7 +39,8 @@ Após a inicialização, você pode acessar:
 
 - **Frontend**: http://localhost:3000
 - **API Backend**: http://localhost:8000
-- **Documentação da API**: http://localhost:8000/docs![1743102900016](image/README/1743102900016.png)
+- **Documentação da API**: http://localhost:8000/docs
+![1743102900016](image/README/1743102900016.png)
 
 ## Desenvolvimento Local
 
